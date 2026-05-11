@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khóa đào tạo: Tạo Slide Bằng AI Cơ Bản & Nâng Cao | Viettel Networks</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Configuration (Brand Guidelines) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        viettel: {
+                            red: '#E30613',
+                            darkred: '#B30000',
+                        },
+                        vdark: '#0A0A0A',
+                        vgray: {
+                            1: '#4A4A4A',
+                            2: '#7F7F7F',
+                            4: '#F5F5F5'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Arial"', 'sans-serif'], // Fallback for FS Magistral
+                        body: ['"Roboto"', 'sans-serif'] // Fallback for PF BeauSans Pro
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities */
+        .hover-scale {
+            transition: transform 200ms ease-out;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        .pie-chart {
+            background: conic-gradient(#E30613 0% 80%, #4A4A4A 80% 100%);
+        }
+    </style>
+</head>
+<body class="font-body text-vgray-1 bg-white antialiased">
+
+    <!-- 1. Thanh Điều Hướng (Navigation Bar) -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="font-heading font-extrabold text-2xl tracking-tighter text-black">
+                        VIETTEL <span class="font-normal text-vgray-1">networks</span>
+                    </span>
+                </div>
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#loi-ich" class="text-vgray-1 hover:text-viettel-red font-medium transition-colors">Lợi ích</a>
+                    <a href="#noi-dung" class="text-vgray-1 hover:text-viettel-red font-medium transition-colors">Nội dung</a>
+                    <a href="#danh-gia" class="text-vgray-1 hover:text-viettel-red font-medium transition-colors">Tiêu chí đánh giá</a>
+                    <a href="#lien-he" class="text-vgray-1 hover:text-viettel-red font-medium transition-colors">Liên hệ</a>
+                </div>
+                <!-- CTA & Hotline -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <span class="text-sm font-medium text-vgray-1">Hotline: 0989 208 017</span>
+                    <a href="#dang-ky" class="bg-viettel-red hover:bg-viettel-darkred text-white px-6 py-2.5 rounded-md font-bold transition-colors">
+                        ĐĂNG KÝ NGAY
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-vgray-1 hover:text-viettel-red focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section (Phần Mở Đầu) -->
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight">
+                    HƯỚNG DẪN TẠO SLIDE BẰNG AI CƠ BẢN & NÂNG CAO
+                </h1>
+                <p class="text-xl md:text-2xl text-vgray-1 font-medium leading-relaxed">
+                    Tối ưu hóa thời gian - Nâng tầm chuyên nghiệp - Chuẩn nhận diện thương hiệu Viettel
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i data-lucide="clock" class="w-6 h-6 text-viettel-red mt-1 mr-3 flex-shrink-0"></i>
+                        <p class="text-lg"><strong>Thời gian:</strong> 08h30 - 12h00 | Thứ Sáu, ngày 08/05/2026 (3,5 giờ)</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-viettel-red mt-1 mr-3 flex-shrink-0"></i>
+                        <p class="text-lg"><strong>Hình thức:</strong> Blended Learning (Tầng G – Tòa nhà Thái Bình & Online qua Zoom)</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i data-lucide="hourglass" class="w-6 h-6 text-viettel-red mt-1 mr-3 flex-shrink-0"></i>
+                        <p class="text-lg"><strong>Hạn cuối đăng ký:</strong> <span class="font-bold text-viettel-red">06/05/2026</span></p>
+                    </div>
+                </div>
+                <div>
+                    <a href="#dang-ky" class="inline-block bg-viettel-red hover:bg-viettel-darkred text-white px-8 py-4 rounded-lg font-bold text-lg hover-scale shadow-lg shadow-red-500/30">
+                        ĐĂNG KÝ THAM GIA NGAY
+                    </a>
+                </div>
+            </div>
+            <div class="relative hidden lg:block">
+                <!-- Placeholder for Hero Image -->
+                <div class="aspect-square bg-vgray-4 rounded-2xl flex items-center justify-center border border-gray-200 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-gray-100 to-gray-50"></div>
+                    <div class="text-center z-10 p-8">
+                        <i data-lucide="monitor-play" class="w-24 h-24 text-gray-300 mx-auto mb-4"></i>
+                        <p class="text-vgray-2 font-medium">[Hình ảnh minh họa nhân viên làm slide AI]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Lợi Ích Cốt Lõi -->
+    <section id="loi-ich" class="py-20 bg-vgray-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-black mb-6">🎁 QUYỀN LỢI ĐẶC BIỆT DÀNH CHO HỌC VIÊN</h2>
+                <p class="text-lg text-vgray-1">
+                    Tham gia khóa đào tạo, bạn sẽ được trang bị "tận răng" các công cụ và tài liệu để ứng dụng AI ngay lập tức vào công việc:
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md hover-scale border border-gray-100">
+                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="award" class="w-8 h-8 text-viettel-red"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-black mb-3">Nhận chứng nhận nội bộ</h3>
+                    <p class="text-vgray-1 leading-relaxed">Ghi nhận hoàn thành khóa học, đáp ứng yêu cầu Khung năng lực (KNL).</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md hover-scale border border-gray-100">
+                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="book-open" class="w-8 h-8 text-viettel-red"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-black mb-3">Tài liệu "Cầm tay chỉ việc"</h3>
+                    <p class="text-vgray-1 leading-relaxed">Bộ hướng dẫn chi tiết cả lý thuyết lẫn thực hành – chỉ cần đọc là có thể thao tác được ngay.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md hover-scale border border-gray-100">
+                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="gift" class="w-8 h-8 text-viettel-red"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-black mb-3">Quà tặng độc quyền</h3>
+                    <p class="text-vgray-1 leading-relaxed">Nhận ngay bộ template prompt mẫu có tính ứng dụng cao.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md hover-scale border border-gray-100">
+                    <div class="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="rocket" class="w-8 h-8 text-viettel-red"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-black mb-3">Bộ bí kíp mở rộng Claude</h3>
+                    <p class="text-vgray-1 leading-relaxed">Hướng dẫn hoàn chỉnh từ cài đặt đến use case thực tiễn cho Claude trên Excel, Word và tiện ích Chrome.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Cách Thức Hoạt Động (Nội Dung Chương Trình) -->
+    <section id="noi-dung" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-black text-center mb-16">📖 NỘI DUNG CHƯƠNG TRÌNH (3,5 Giờ Thực Chiến)</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Phần 1 -->
+                <div class="flex flex-col md:flex-row bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="bg-viettel-red md:w-32 flex-shrink-0 flex items-center justify-center p-6 md:p-0">
+                        <span class="text-white font-heading font-extrabold text-5xl opacity-90">01</span>
+                    </div>
+                    <div class="p-8 md:p-10">
+                        <h3 class="font-heading text-2xl font-bold text-black mb-4">Phần 1: Tạo Slide Bằng AI Cơ Bản</h3>
+                        <ul class="space-y-3 text-lg text-vgray-1">
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-5 h-5 text-viettel-red mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Phương pháp xây dựng tài liệu chuẩn với cấu trúc logic, rõ ràng.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-5 h-5 text-viettel-red mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Thực hành dùng AI (Claude, Gemini, NotebookLM...) thiết kế slide tuân thủ đúng chuẩn nhận diện thương hiệu Viettel.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check" class="w-5 h-5 text-viettel-red mt-1 mr-3 flex-shrink-0"></i>
+                                <span>Kỹ năng tinh chỉnh và làm đẹp slide qua các công cụ như Claude for PowerPoint, Canva...</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phần 2 -->
+                <div class="flex flex-col md:flex-row bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="bg-vdark md:w-32 flex-shrink-0 flex items-center justify-center p-6 md:p-0">
+                        <span class="text-white font-heading font-extrabold text-5xl opacity-90">02</span>
+                    </div>
+                    <div class="p-8 md:p-10">
+                        <h3 class="font-heading text-2xl font-bold text-black mb-4">Phần 2: Nâng Cao Cùng AI & Landing Page</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-lg text-black mb-2 flex items-center">
+                                    <i data-lucide="cpu" class="w-5 h-5 mr-2 text-vgray-2"></i> Chuyên đề Skill Claude:
+                                </h4>
+                                <p class="text-vgray-1 pl-7">Giới thiệu tổng quan và quy trình xây dựng một "Skill" AI từ số 0 đến khi hoàn thiện. Thực hành thiết kế Skill tự động hóa các tác vụ: Dàn trang slide, tạo báo cáo, soạn thảo công văn...</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-black mb-2 flex items-center">
+                                    <i data-lucide="layout" class="w-5 h-5 mr-2 text-vgray-2"></i> Chuyên đề Thiết Kế Landing Page:
+                                </h4>
+                                <p class="text-vgray-1 pl-7">Tổng quan thiết kế trang hoàn chỉnh (CV cá nhân, trang giới thiệu khóa học...). Ứng dụng thiết kế bài giảng dưới định dạng Landing Page (.html). Hướng dẫn xuất bản miễn phí bằng Github.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Đối Tượng & Yêu Cầu Đầu Vào -->
+    <section class="py-20 bg-vdark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-center mb-16">🎯 AI NÊN THAM GIA KHÓA HỌC NÀY & YÊU CẦU ĐẦU VÀO</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Cột 1 -->
+                <div class="bg-gray-900 rounded-xl p-8 border border-gray-800">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gray-800 p-3 rounded-lg mr-4">
+                            <i data-lucide="users" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold">Đối tượng tham gia</h3>
+                    </div>
+                    <ul class="space-y-4 text-gray-300 text-lg">
+                        <li class="flex items-start">
+                            <span class="text-viettel-red font-bold mr-3">•</span>
+                            <span>CBCNV cần hoàn thiện chứng nhận khóa Slide để đáp ứng tiêu chuẩn Khung năng lực (KNL).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-viettel-red font-bold mr-3">•</span>
+                            <span>CBCNV muốn làm chủ các công cụ AI để tự động hóa việc thiết kế slide và xây dựng landing page, phục vụ công việc.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Cột 2 -->
+                <div class="bg-gray-900 rounded-xl p-8 border border-gray-800">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gray-800 p-3 rounded-lg mr-4">
+                            <i data-lucide="check-circle" class="w-8 h-8 text-green-400"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold">Yêu cầu chuẩn bị</h3>
+                    </div>
+                    <ul class="space-y-4 text-gray-300 text-lg">
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-6 h-6 text-green-400 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Bắt buộc mang theo máy tính cá nhân để tham gia phần thực hành.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check" class="w-6 h-6 text-green-400 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Khuyến khích chuẩn bị sẵn các tài khoản AI (đặc biệt là bản trả phí nếu có) như: Gemini, Claude, Canva... để có trải nghiệm học tập tốt nhất.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Sản Phẩm Đầu Ra & Tiêu Chí -->
+    <section id="danh-gia" class="py-20 bg-vgray-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-black text-center mb-16">🏆 SẢN PHẨM ĐẦU RA & TIÊU CHÍ ĐÁNH GIÁ</h2>
+            
+            <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 flex flex-col md:flex-row items-center gap-12">
+                <!-- Biểu đồ tròn -->
+                <div class="flex-shrink-0 flex flex-col items-center">
+                    <div class="w-48 h-48 rounded-full pie-chart shadow-inner flex items-center justify-center relative">
+                        <!-- Lỗ hở ở giữa tạo donut chart -->
+                        <div class="w-32 h-32 bg-white rounded-full flex flex-col items-center justify-center">
+                            <span class="text-3xl font-heading font-extrabold text-black">10</span>
+                            <span class="text-sm font-medium text-vgray-2">Điểm Tối Đa</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 mt-6">
+                        <div class="flex items-center text-sm font-medium">
+                            <span class="w-3 h-3 rounded-full bg-viettel-red mr-2"></span> Slide (8đ)
+                        </div>
+                        <div class="flex items-center text-sm font-medium">
+                            <span class="w-3 h-3 rounded-full bg-[#4A4A4A] mr-2"></span> Landing Page (2đ)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Nội dung -->
+                <div class="flex-1">
+                    <p class="text-lg text-vgray-1 mb-8 leading-relaxed">
+                        Để nhận chứng nhận, 100% học viên cần hoàn thiện sản phẩm cuối khóa. Bài làm sẽ được <strong class="text-black">chấm điểm tự động bằng AI</strong> dựa trên tiêu chí định trước (Điểm đạt tối thiểu: 7/10 điểm).
+                    </p>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-red-50 border-l-4 border-viettel-red rounded-r-lg">
+                            <p class="font-bold text-black text-lg">Dự án 1 <span class="text-viettel-red font-normal">(Tối đa 8 điểm)</span></p>
+                            <p class="text-vgray-1 mt-1">Hoàn thiện 01 sản phẩm thiết kế Slide bằng AI.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-l-4 border-vgray-1 rounded-r-lg">
+                            <p class="font-bold text-black text-lg">Dự án 2 <span class="text-vgray-1 font-normal">(Tối đa 2 điểm)</span></p>
+                            <p class="text-vgray-1 mt-1">Xây dựng thành công 01 Landing page.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Đội Ngũ Chuyên Gia Đồng Hành -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-black mb-16">🤝 ĐỘI NGŨ CHUYÊN GIA ĐỒNG HÀNH</h2>
+            
+            <div class="inline-block">
+                <div class="bg-white rounded-2xl p-8 hover-scale">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-vgray-4 border-4 border-gray-100 flex items-center justify-center mb-6 overflow-hidden">
+                        <!-- Placeholder Hình ảnh -->
+                        <i data-lucide="user" class="w-16 h-16 text-gray-400"></i>
+                        <!-- <img src="https://www.youtube.com/watch?v=P7S1RXImXbU" alt="Đ/c Đỗ Thị Ngát" class="w-full h-full object-cover"> -->
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-black">Đ/c Đỗ Thị Ngát</h3>
+                    <p class="text-viettel-red font-medium mt-2">Phòng Nhân sự</p>
+                    <p class="text-vgray-2 text-sm mt-1">Người hướng dẫn trực tiếp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Lời Kêu Gọi Hành Động Cuối (Final CTA) -->
+    <section id="dang-ky" class="py-24 bg-viettel-red text-white text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-sm">ĐĂNG KÝ THAM GIA NGAY HÔM NAY!</h2>
+            <p class="text-xl md:text-2xl text-red-100 mb-10 font-medium">
+                Vui lòng điền đầy đủ Mã nhân viên, Họ tên và hoàn thành các câu hỏi khảo sát ngắn để Ban tổ chức có thể thiết kế nội dung hỗ trợ bạn tốt nhất.
+            </p>
+            
+            <!-- Countdown Timer -->
+            <div class="bg-black/20 backdrop-blur-sm rounded-2xl p-6 mb-12 inline-block border border-red-400/30">
+                <p class="text-sm uppercase tracking-widest text-red-200 font-bold mb-4">⏰ Hạn cuối tiếp nhận danh sách: 06/05/2026</p>
+                <div class="flex justify-center space-x-4 md:space-x-8 text-center font-heading">
+                    <div class="flex flex-col">
+                        <span id="days" class="text-4xl md:text-5xl font-extrabold">00</span>
+                        <span class="text-xs uppercase text-red-200 mt-1">Ngày</span>
+                    </div>
+                    <span class="text-4xl md:text-5xl font-extrabold opacity-50">:</span>
+                    <div class="flex flex-col">
+                        <span id="hours" class="text-4xl md:text-5xl font-extrabold">00</span>
+                        <span class="text-xs uppercase text-red-200 mt-1">Giờ</span>
+                    </div>
+                    <span class="text-4xl md:text-5xl font-extrabold opacity-50">:</span>
+                    <div class="flex flex-col">
+                        <span id="minutes" class="text-4xl md:text-5xl font-extrabold">00</span>
+                        <span class="text-xs uppercase text-red-200 mt-1">Phút</span>
+                    </div>
+                    <span class="text-4xl md:text-5xl font-extrabold opacity-50">:</span>
+                    <div class="flex flex-col">
+                        <span id="seconds" class="text-4xl md:text-5xl font-extrabold">00</span>
+                        <span class="text-xs uppercase text-red-200 mt-1">Giây</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <a href="#" class="inline-block bg-vdark hover:bg-black text-white px-8 md:px-12 py-5 rounded-lg font-bold text-lg md:text-xl shadow-xl hover-scale transition-all">
+                    ĐIỀN FORM ĐĂNG KÝ VÀ KHẢO SÁT TẠI ĐÂY
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Footer (Chân Trang) -->
+    <footer id="lien-he" class="bg-vdark py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-8">
+                <!-- Logo & Copyright -->
+                <div>
+                    <span class="font-heading font-extrabold text-2xl tracking-tighter text-white block mb-4">
+                        VIETTEL <span class="font-normal text-gray-400">networks</span>
+                    </span>
+                    <p class="text-gray-500 text-sm">© 2026 Tổng Công ty Mạng lưới Viettel (VTNet).</p>
+                    <p class="text-gray-500 text-sm">Tài liệu nội bộ — Không phân phối ra ngoài.</p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="text-gray-400">
+                    <h4 class="text-white font-bold mb-4 font-heading">Đầu mối hỗ trợ & giải đáp</h4>
+                    <p class="mb-2"><strong>Đ/c Mai Ngọc Minh</strong> – Phòng Nhân sự</p>
+                    <p class="mb-2 flex items-center justify-center md:justify-start">
+                        <i data-lucide="phone" class="w-4 h-4 mr-2"></i> Hotline: <span class="text-white ml-1">0989 208 017</span>
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start">
+                        <i data-lucide="mail" class="w-4 h-4 mr-2"></i> Email: <span class="text-white ml-1">minhmn@viettel.com.vn</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA Bar (Mobile only) -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-50">
+        <a href="#dang-ky" class="flex items-center justify-center w-full bg-viettel-red text-white py-3 rounded-lg font-bold">
+            ĐĂNG KÝ NGAY <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Khởi tạo Lucide Icons
+        lucide.createIcons();
+
+        // Script Đồng hồ đếm ngược (Đến 23h59 ngày 06/05/2026)
+        const targetDate = new Date('2026-05-06T23:59:59').getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        };
+
+        // Cập nhật mỗi giây
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Chạy ngay lần đầu
+    </script>
+</body>
+</html>
